@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
         for (let i = 0; i < limit; i++) {
           short+=alpha[Math.floor(Math.random()*alpha.length)]
         }
-        callback.short_url=short;
+        callback.short_url=short+'.andrew';
       }
     }
   });
