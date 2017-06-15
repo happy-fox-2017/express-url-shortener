@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+  </title>
+</head>
+
+<body>
+  <h1>SHORT URL </h1>
+  <form action="/urls" method="post">
+    <label for="url">Adding url:</label>
+    <input type="text" name="url" id="url">
+    <button type="submit">Submit</button>
+  </form>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th>Number  </th>
+        <th>URL    </th>
+        <th>SHORTURL      </th>
+        <th>COUNTING    </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let i=1; data.forEach((datas)=>{ %>
+        <tr>
+          <td>
+            <%= i++ %>
+          </td>
+          <td>
+            <a href="<%= datas.url %>">
+              <%= datas.url %>
+            </a>
+          </td>
+          <td>
+            <a href="/<%= datas.shorturl %>" onclick="window.open('<%= datas.url %>');">
+              <%= datas.shorturl %>
+            </a>
+          </td>
+          <td>
+            <%= datas.count %>
+          </td>
+        </tr>
+        <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
