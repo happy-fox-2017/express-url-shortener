@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>URL | Statistic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6 l8 ">
+          <table class="">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>short url</th>
+                <th>URL</th>
+                <th>click count</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%
+                data.forEach((d) => {
+              %>
+              <tr>
+                <td><%= d.id %></td>
+                <td><a href='<%= d.short_url %>' target="_blank" onclick="location.reload()"><%= d.short_url %></a></td>
+                <td><%= d.norm_url %></td>
+                <td><%= d.click_count %></td>
+              </tr>
+              <%
+               })
+              %>
+            </tbody>
+          </table>
+          <br>
+          <form class="center" action="/">
+              <button class="waves-effect waves-light btn-large " type="Home" value="index">Home</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  </body>
+</html>
